@@ -2,3 +2,5 @@ guacd (0.6.1.2-2flexiant1) natty; urgency=low
 
   * Add Hyper-V support
 
+ -- Alex Bligh <alex@flexiant.com>  Sun, 16 Sep 2012 18:45:14 +0100
+
