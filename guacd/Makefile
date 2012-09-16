@@ -1,6 +1,8 @@
 BUILD=build
 UPDATE=update.tmp
 TARGET=guacd
+# set this to 'echo' to not do svn commands
+SVNFAKE=
 
 all: 
 	@echo "This target cannot be built this way. Use:"
@@ -19,12 +21,12 @@ update:
 	echo "echo \"exit 0\" >/etc/default/guacd" > debian/postinst && \
 	cat ../../changelog.delta debian/changelog > debian/changelog.new && \
 	mv debian/changelog.new debian/changelog && \
-	/bin/rm -rf ${TARGET}/.git ) && \
-	( if [ -d ${TARGET} ] ; then echo svn rm --force ${TARGET} ; fi )  && \
+	/bin/rm -rf .git ) && \
+	( if [ -d ${TARGET} ] ; then ${SVNFAKE} svn rm --force ${TARGET} ; fi )  && \
 	rm -rf ${TARGET} && \
 	echo "Moving new target into place"
 	mv ${UPDATE}/${TARGET} ${TARGET}
-	echo svn add ${TARGET}
+	${SVNFAKE} svn add ${TARGET}
 	(cd ${TARGET} && perl -p -i -e 's/-1ubuntu2flexiant/.2-1flexiant/g;' debian/changelog)
 	/bin/rm -rf ${UPDATE}
 
