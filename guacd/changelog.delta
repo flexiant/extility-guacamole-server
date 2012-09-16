@@ -1,0 +1,4 @@
+guacd (0.6.1.2-2flexiant1) natty; urgency=low
+
+  * Add Hyper-V support
+

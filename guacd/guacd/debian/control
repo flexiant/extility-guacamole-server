@@ -1,0 +1,21 @@
+Source: guacd
+Priority: extra
+Maintainer: Michael Jumper <zhangmaike@users.sourceforge.net>
+Build-Depends: debhelper (>= 7.0), dh-autoreconf, libguac-dev (>= 0.6), libguac-dev (<< 0.7), libcairo-dev
+Standards-Version: 3.9.3
+Section: net
+Homepage: http://guacamole.sourceforge.net/
+Vcs-Git: git://guacamole.git.sourceforge.net/gitroot/guacamole/guacd
+Vcs-Browser: http://guacamole.git.sourceforge.net/git/gitweb.cgi?p=guacd;a=tree
+
+Package: guacd
+Section: net
+Architecture: any
+Depends: lsb-base (>= 3.0-6), ${shlibs:Depends}, ${misc:Depends}
+Description: Guacamole proxy daemon
+ The Guacamole proxy daemon, guacd, translates between remote desktop
+ protocols (like VNC) and the Guacamole protocol using protocol plugins.
+ Once a user is authenticated with the Guacamole web application, a tunnel
+ is established through the web application to guacd, allowing the JavaScript
+ client to communicate to an arbitrary remote desktop server through guacd.
+
