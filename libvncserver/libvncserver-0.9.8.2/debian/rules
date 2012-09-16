@@ -1,0 +1,17 @@
+#!/usr/bin/make -f
+
+export LIBTOOLIZE = true
+DEB_HOST_ARCH_OS ?= $(shell dpkg-architecture -qDEB_HOST_ARCH_OS)
+DEB_HOST_ARCH ?= $(shell dpkg-architecture -qDEB_HOST_ARCH)
+
+ifeq ($(DEB_HOST_ARCH), ppc64)
+  export DEB_GCC_NO_O3=1
+  export CFLAGS=-g -O0
+endif
+
+ifneq ($(DEB_HOST_ARCH_OS), linux)
+  EXTRA_DH_ARG=-Nlinuxvnc
+endif
+
+%:
+	dh $@ $(EXTRA_DH_ARG) --with autoreconf --dbg-package=libvncserver0-dbg

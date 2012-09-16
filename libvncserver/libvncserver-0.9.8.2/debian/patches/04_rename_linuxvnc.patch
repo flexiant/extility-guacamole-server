@@ -1,0 +1,15 @@
+Index: b/vncterm/Makefile.am
+===================================================================
+--- a/vncterm/Makefile.am	2011-10-02 02:14:32.797114144 +0200
++++ b/vncterm/Makefile.am	2011-10-02 02:14:54.129114798 +0200
+@@ -8,8 +8,8 @@
+ 
+ if LINUX
+ if ! MINGW
+-bin_PROGRAMS=LinuxVNC
+-LinuxVNC_SOURCES=LinuxVNC.c $(CONSOLE_SRCS)
++bin_PROGRAMS=linuxvnc
++linuxvnc_SOURCES=LinuxVNC.c $(CONSOLE_SRCS)
+ endif
+ endif
+ 

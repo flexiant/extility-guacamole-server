@@ -1,0 +1,28 @@
+Index: b/configure.ac
+===================================================================
+--- a/configure.ac	2011-10-02 02:14:33.037114151 +0200
++++ b/configure.ac	2011-10-02 02:14:53.437114776 +0200
+@@ -834,8 +834,6 @@
+ 	libvncserver/Makefile
+ 	examples/Makefile
+ 	vncterm/Makefile
+-	classes/Makefile
+-	classes/ssl/Makefile
+ 	libvncclient/Makefile
+ 	client_examples/Makefile
+ 	test/Makefile
+Index: b/Makefile.am
+===================================================================
+--- a/Makefile.am	2011-10-02 02:14:33.021114151 +0200
++++ b/Makefile.am	2011-10-02 02:14:53.437114776 +0200
+@@ -2,8 +2,8 @@
+ X11VNC=x11vnc
+ endif
+ 
+-SUBDIRS=libvncserver examples libvncclient vncterm classes client_examples test $(X11VNC)
+-DIST_SUBDIRS=libvncserver examples libvncclient vncterm classes client_examples test
++SUBDIRS=libvncserver examples libvncclient vncterm client_examples test $(X11VNC)
++DIST_SUBDIRS=libvncserver examples libvncclient vncterm client_examples test
+ EXTRA_DIST = CMakeLists.txt rfb/rfbint.h.cmake rfb/rfbconfig.h.cmake
+ 
+ bin_SCRIPTS = libvncserver-config
