@@ -1,0 +1,15 @@
+Section: unknown
+Source: extility-guacamole-server
+Priority: extra
+Maintainer: Iain Watson <iwatson@flexiant.com>
+Build-Depends: debhelper (>= 7)
+Standards-Version: 3.8.3
+Homepage: http://www.flexiant.com/
+
+Package: extility-guacamole-server
+Architecture: any
+Depends: libguac-client-rdp0, libguac3, libguac-dev, guacd, libguac-client-vnc0
+Description: Extility guacamole server metapackage
+ This package installs the guacamole server components
+
+
