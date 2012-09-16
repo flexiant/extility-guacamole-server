@@ -1,0 +1,27 @@
+Source: libguac
+Priority: extra
+Maintainer: Michael Jumper <zhangmaike@users.sourceforge.net>
+Build-Depends: debhelper (>= 7.0), dh-autoreconf, autotools-dev, libcairo-dev, libcunit1-dev
+Standards-Version: 3.9.3
+Section: libs
+Homepage: http://guacamole.sourceforge.net/
+Vcs-Git: git://guacamole.git.sourceforge.net/gitroot/guacamole/libguac
+Vcs-Browser: http://guacamole.git.sourceforge.net/git/gitweb.cgi?p=libguac;a=tree
+
+Package: libguac-dev
+Section: libdevel
+Architecture: any
+Depends: libguac3 (= ${binary:Version}), ${misc:Depends}
+Description: Development headers for the core Guacamole library
+ The development headers for the core Guacamole library used by guacd and
+ all client plugins. This package is required for development of new client
+ plugins, or for building existing plugins and guacd.
+
+Package: libguac3
+Section: libs
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: Core Guacamole library used by guacd and client plugins
+ The core Guacamole library which both guacd and client plugins depend on
+ to provide low-level I/O and protocol support.
+

@@ -1,0 +1,18 @@
+Source: libguac-client-vnc
+Priority: extra
+Maintainer: Michael Jumper <zhangmaike@users.sourceforge.net>
+Build-Depends: debhelper (>= 7.0.50~), dh-autoreconf, libguac-dev (>= 0.6), libguac-dev (<< 0.7), libcairo-dev, libvncserver-dev
+Standards-Version: 3.9.3
+Section: libs
+Homepage: http://guacamole.sourceforge.net/
+Vcs-Git: git://guacamole.git.sourceforge.net/gitroot/guacamole/libguac-client-vnc
+Vcs-Browser: http://guacamole.git.sourceforge.net/git/gitweb.cgi?p=guacamole/libguac-client-vnc;a=tree
+
+Package: libguac-client-vnc0
+Section: libs
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Recommends: vnc4server
+Description: VNC client plugin for Guacamole
+ A plugin for the Guacamole proxy daemon (guacd) that provides
+ support for the VNC protocol.
