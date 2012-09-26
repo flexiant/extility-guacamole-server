@@ -37,3 +37,5 @@ useradd -g "$GUACD_GROUP" -d "$GUACD_HOME" -s /bin/false -r "$GUACD_USER" || (
     [ "$?" != "9" ] && fail "Could not create user \"$GUACD_USER\""
 )
 
+
+exit 0

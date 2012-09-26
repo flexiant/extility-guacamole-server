@@ -1,4 +1,4 @@
-BUILD=build
+B1;2cBUILD=build
 UPDATE=update.tmp
 TARGET=guacd
 # set this to 'echo' to not do svn commands
@@ -18,7 +18,8 @@ update:
 	git remote add alex git://git.alex.org.uk/guacd.git && \
 	git remote update && \
 	git merge alex/master && \
-	echo "echo \"exit 0\" >/etc/default/guacd" > debian/postinst && \
+	/bin/echo -e "\nexit 0\n" >> debian/preinst && \
+	/bin/echo -e "#!/bin/bash\necho \"exit 0\" >/etc/default/guacd" > debian/postinst && \
 	cat ../../changelog.delta debian/changelog > debian/changelog.new && \
 	mv debian/changelog.new debian/changelog && \
 	/bin/rm -rf .git ) && \
