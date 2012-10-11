@@ -28,6 +28,9 @@ fail() {
 
 #DEBHELPER#
 
+# Do not exit on errors
+set +e
+
 # Create guacd group if it does not exist
 groupadd -fr "$GUACD_GROUP" ||\
     fail "Could not create group \"$GUACD_GROUP\""
