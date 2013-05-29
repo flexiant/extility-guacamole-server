@@ -40,7 +40,7 @@ initdir = @init_dir@
 AM_CFLAGS = -Werror -Wall -pedantic -Iinclude
 
 guacd_CFLAGS = $(AM_CFLAGS) $(XML_CFLAGS)
-guacd_LDFLAGS = $(XML_LIBS)
+guacd_LDADD = $(XML_LIBS)
 
 sbin_PROGRAMS = guacd
 init_SCRIPTS = init.d/guacd
