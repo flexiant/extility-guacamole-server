@@ -1,7 +1,7 @@
 Source: guacd
 Priority: extra
 Maintainer: Michael Jumper <zhangmaike@users.sourceforge.net>
-Build-Depends: debhelper (>= 7.0), dh-autoreconf, libguac-dev,, libcairo-dev
+Build-Depends: debhelper (>= 7.0), dh-autoreconf, libguac-dev, libcairo-dev, libxml2-dev
 Standards-Version: 3.9.3
 Section: net
 Homepage: http://guacamole.sourceforge.net/
